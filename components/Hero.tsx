@@ -69,10 +69,46 @@ export default function Hero() {
         <div className={styles.logo}>Luxride</div>
         
         <nav className={styles.nav}>
-          <a href="#">Home</a>
-          <a href="#">Fleet</a>
-          <a href="#">Services</a>
-          <a href="#">About</a>
+          {["Home", "Fleet", "Services", "About"].map((link) => (
+            <motion.a 
+              href="#" 
+              key={link}
+              initial="initial"
+              whileHover="hover"
+              className={styles.navLinkOuter}
+            >
+              <div style={{ display: 'flex' }}>
+                {link.split('').map((char, i) => (
+                  <motion.span
+                    key={i}
+                    variants={{
+                      initial: { y: 0, filter: "blur(0px)", opacity: 1 },
+                      hover: { y: "-100%", filter: "blur(4px)", opacity: 0 }
+                    }}
+                    transition={{ type: "spring", stiffness: 250, damping: 15, delay: i * 0.02 }}
+                    style={{ whiteSpace: 'pre', display: 'inline-block' }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+              <div style={{ position: 'absolute', inset: 0, display: 'flex' }}>
+                {link.split('').map((char, i) => (
+                  <motion.span
+                    key={i}
+                    variants={{
+                      initial: { y: "100%", filter: "blur(4px)", opacity: 0 },
+                      hover: { y: 0, filter: "blur(0px)", opacity: 1 }
+                    }}
+                    transition={{ type: "spring", stiffness: 250, damping: 15, delay: i * 0.02 }}
+                    style={{ whiteSpace: 'pre', display: 'inline-block' }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.a>
+          ))}
         </nav>
 
         <button className={styles.bookNow}>
