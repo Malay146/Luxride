@@ -27,18 +27,18 @@ export default function Features() {
 
   const bentoVariants = {
     hidden: { opacity: 0, scale: 0.95, y: 30 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0, 
-      transition: { type: 'spring', stiffness: 150, damping: 20 } 
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 150, damping: 20 }
     }
   } as any;
 
   return (
     <section className={`${styles.section} ${inter.className}`}>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -53,14 +53,14 @@ export default function Features() {
         </p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         className={styles.grid}
       >
-        
+
         {/* Card 1: Left Vertical */}
         <motion.div variants={bentoVariants} className={`${styles.card} ${styles.cardLeft}`}>
           <Image
@@ -72,17 +72,10 @@ export default function Features() {
           <div className={styles.mask} />
           <div className={styles.cardContent}>
             <div className={styles.textGroup}>
-              <span className={styles.textBold}>Experience the Thrill<br/>of Driving </span>
-              <span className={styles.textMuted}>McLaren,<br/>Lamborghini, and<br/>Rolls-Royce</span>
+              <span className={styles.textBold}>Experience the Thrill<br />of Driving </span>
+              <span className={styles.textMuted}>McLaren,<br />Lamborghini, and<br />Rolls-Royce</span>
             </div>
-            <button className={styles.exploreMoreBtn}>
-              Explore More
-              <div className={styles.iconCircle}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </div>
-            </button>
+
           </div>
         </motion.div>
 
@@ -100,7 +93,7 @@ export default function Features() {
           </button>
           <div className={styles.cardContent}>
             <div className={styles.textGroup}>
-              <span className={styles.textBold}>Flexible Rentals<br/></span>
+              <span className={styles.textBold}>Flexible Rentals<br /></span>
               <span className={styles.textMuted}>for Any Schedule</span>
             </div>
           </div>
@@ -120,7 +113,7 @@ export default function Features() {
           </button>
           <div className={styles.cardContent}>
             <div className={styles.textGroup}>
-              <span className={styles.textBold}>Unmatched<br/></span>
+              <span className={styles.textBold}>Unmatched<br /></span>
               <span className={styles.textMuted}>Comfort and Style</span>
             </div>
           </div>

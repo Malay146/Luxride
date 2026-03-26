@@ -2,6 +2,7 @@
 import React from 'react';
 import { Michroma, Inter } from 'next/font/google';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 const michroma = Michroma({ weight: '400', subsets: ['latin'] });
@@ -41,14 +42,16 @@ export default function Footer() {
         <p className={styles.ctaSubtitle}>
           Join thousands of satisfied customers who have experienced the ultimate luxury. Book your exclusive vehicle today and transform your journey.
         </p>
-        <button className={styles.bookNow}>
-          Book Now
-          <div className={styles.iconCircle}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </div>
-        </button>
+        <Link href="/fleet" style={{ textDecoration: 'none' }}>
+          <button className={styles.bookNow}>
+            Book Now
+            <div className={styles.iconCircle}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </button>
+        </Link>
       </motion.div>
 
       <motion.div 
@@ -75,10 +78,10 @@ export default function Footer() {
 
         <motion.div variants={fadeUp} className={styles.linksCol}>
           <div className={styles.linkTitle}>Company</div>
-          <a href="#" className={styles.linkItem}>About Us</a>
-          <a href="#" className={styles.linkItem}>Our Fleet</a>
+          <Link href="/about" className={styles.linkItem}>About Us</Link>
+          <Link href="/fleet" className={styles.linkItem}>Our Fleet</Link>
           <a href="#" className={styles.linkItem}>Careers</a>
-          <a href="#" className={styles.linkItem}>Contact</a>
+          <Link href="/contact" className={styles.linkItem}>Contact</Link>
         </motion.div>
 
         <motion.div variants={fadeUp} className={styles.linksCol}>
